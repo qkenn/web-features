@@ -1,0 +1,57 @@
+/* GENERAL STYLING START */
+@font-face {
+  font-family: 'archivo-narrow';
+  src: url('./fonts/ArchivoNarrow-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --main-ff: 'archivo-narrow';
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  line-height: 1.7;
+  font-family: var(--main-ff);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.main {
+  max-width: 90rem;
+  margin: 5rem auto;
+}
+/* GENERAL STYLING END */
+
+/* DROPDOWN SECTION START */
+.links-container {
+  display: flex;
+  list-style-type: none;
+  gap: 3em;
+  justify-content: center;
+}
+
+.primary-link:nth-child(2) a {
+  text-decoration: underline;
+}
+
+.primary-link {
+  font-size: 2rem;
+}
+
+.drop-link {
+  display: flex;
+  gap: 0.2em;
+}
+/* DROPDOWN SECTION END */
