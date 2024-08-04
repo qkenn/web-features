@@ -1,9 +1,33 @@
 /* GENERAL STYLING START */
+/* custom font */
 @font-face {
   font-family: 'archivo-narrow';
   src: url('./fonts/ArchivoNarrow-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+
+/* animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0.5rem);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
 }
 
 :root {
@@ -42,11 +66,11 @@ a {
   justify-content: center;
 }
 
-.primary-link:nth-child(2) a {
-  text-decoration: underline;
+.links-container li {
+  border: 1px solid #333;
 }
 
-.primary-link {
+.link {
   font-size: 2rem;
 }
 
@@ -54,4 +78,29 @@ a {
   display: flex;
   gap: 0.2em;
 }
+
+.drop-link-container {
+  position: relative;
+}
+
+.hidden {
+  position: absolute;
+  z-index: 2;
+  width: 20rem;
+  top: 3rem;
+  left: -4rem;
+  border: 2px solid #333;
+  display: none;
+}
+
+.fade-in {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.fade-out {
+  display: none;
+  animation: fadeOut 0.5s ease-in-out forwards;
+}
+
 /* DROPDOWN SECTION END */
