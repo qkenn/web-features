@@ -11,6 +11,7 @@
   --main-ff: 'archivo-narrow';
   --main-fc: hsl(0, 0%, 19%);
   --title-fc: hsl(0, 0%, 14%);
+  --main-bs: 0px 0px 20px hsla(0, 0%, 37%, 0.2);
 }
 
 *,
@@ -44,16 +45,19 @@ a {
   list-style-type: none;
   gap: 3em;
   justify-content: center;
+  align-items: center;
 }
 
 .link {
   color: var(--title-fc);
   font-size: 2.5rem;
+  padding: 0.2em;
 }
 
 .drop-link {
   display: flex;
   gap: 0.2em;
+  align-items: center;
 }
 
 .drop-link-container {
@@ -64,10 +68,10 @@ a {
   position: absolute;
   z-index: 2;
   width: 30rem;
-  top: 3rem;
+  top: 4.5rem;
   left: -4rem;
   display: none;
-  box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.2);
+  box-shadow: var(--main-bs);
   border-radius: 1rem;
 }
 

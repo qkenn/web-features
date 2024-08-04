@@ -1,25 +1,37 @@
 import './style.css';
-import chevronIcon from './icons/chevron-down.svg';
+import chevronIcon from './images/chevron-down.svg';
 
-const dropIcon = document.getElementById('chevron-icon'),
-  dropLink = document.getElementById('drop-link'),
+document.getElementById('chevron-icon').setAttribute('src', chevronIcon);
+
+const dropLink = document.getElementById('drop-link'),
   hiddenMenu = document.getElementById('hidden-menu');
-
-dropIcon.setAttribute('src', chevronIcon);
 
 dropLink.addEventListener('mouseenter', () => {
   hiddenMenu.style.display = 'block';
 
-  const fadeIn = hiddenMenu.animate([{ opacity: 0 }, { opacity: 1 }], {
-    duration: 500,
-    fill: 'forwards',
-  });
+  const fadeIn = hiddenMenu.animate(
+    [
+      { opacity: 0, transform: 'translateY(0)' },
+      { opacity: 1, transform: 'translateY(.5rem)' },
+    ],
+    {
+      duration: 200,
+      fill: 'forwards',
+    }
+  );
 });
 
 dropLink.addEventListener('mouseleave', () => {
-  const fadeOut = hiddenMenu.animate([{ opacity: 1 }, { opacity: 0 }], {
-    duration: 500,
-  });
+  const fadeOut = hiddenMenu.animate(
+    [
+      { opacity: 1, transform: 'translateY(.5rem)' },
+      { opacity: 0, transform: 'translateY(0)' },
+    ],
+    {
+      duration: 200,
+      fill: 'forwards',
+    }
+  );
 
   fadeOut.onfinish = () => {
     hiddenMenu.style.display = 'none';
