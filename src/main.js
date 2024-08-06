@@ -9,15 +9,14 @@ class Dropdown {
   constructor(trigger, hiddenMenu) {
     this.trigger = trigger;
     this.hiddenMenu = hiddenMenu;
-
-    // listen for events soon after dropdown gets created
-    this.reveal();
-    this.hide();
   }
 
-  // hidden menu reveal event
-  reveal = () => {
-    this.trigger.addEventListener('mouseenter', this.handleReveal);
+  // main initializer
+  init = () => {
+    window.onload = () => {
+      this.trigger.onmouseenter = this.handleReveal;
+      this.trigger.onmouseleave = this.handleHide;
+    };
   };
 
   // reveal event handler
@@ -33,11 +32,6 @@ class Dropdown {
         fill: 'forwards',
       }
     );
-  };
-
-  // hidden menu hide event
-  hide = () => {
-    this.trigger.addEventListener('mouseleave', this.handleHide);
   };
 
   // hide event handler
@@ -61,3 +55,5 @@ const dropdown = new Dropdown(
   document.getElementById('drop-link'),
   document.getElementById('hidden-menu')
 );
+
+dropdown.init();
